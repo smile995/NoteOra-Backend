@@ -11,8 +11,8 @@ const getAllPostFromDB = async () => {
   const result = await PostModel.find({ isDeleted: false });
   return result;
 };
-const getSinglePostFromDB = async (id: string) => {
-  const result = await PostModel.findById(id);
+const getSinglePostFromDB = async (slug: string) => {
+  const result = await PostModel.find({slug:slug});
   return result;
 };
 const softDeleteSinglePostFromDB = async (id: string) => {
