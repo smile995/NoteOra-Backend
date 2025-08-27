@@ -15,7 +15,6 @@ const getSinglePostFromDB = async (id:string) => {
 };
 const softDeleteSinglePostFromDB = async (id:string) => {
   const result = await PostModel.findOneAndUpdate({_id:id}, {isDeleted:true},{new:true});
-  
   return result;
 };
 
